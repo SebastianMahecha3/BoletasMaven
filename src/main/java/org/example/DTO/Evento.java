@@ -31,5 +31,20 @@ public class Evento {
         this.localidades = new ArrayList<>();
     }
 
+    public boolean agregarLocalidad(Localidad localidad)
+    {
+        if(totalBoletas + localidad.getCapacidad() <= Max_boletas){
+            localidades.add(localidad);
+            totalBoletas += localidad.getCapacidad();
+            return true;
+        }
+        return false;
+    }
+
+    public String toString()
+    {
+        return nombre+" - "+ fecha;
+    }
+
 
 }
